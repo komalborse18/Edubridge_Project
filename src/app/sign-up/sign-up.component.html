@@ -1,0 +1,43 @@
+<div class="card mx-auto">
+  <div class="form">
+    <div class="form-group">
+      <h2>Fill the Form Please</h2>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+        <div class="form-control">
+          <input type="text" id="username" name="username" placeholder="Enter Username" #userName>
+          <h1 style="font-size: 12px; font-weight: normal;">We'll never share your user name with anyone else.</h1>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+        <div class="form-control">
+          <input type="email" id="email" name="email" placeholder="Enter E-mail" #email>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="pass">Password</label>
+        <div class="form-control">
+          <input type="password" id="pass" name="pass" placeholder="Enter Password" #password>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Repeat Password</label>
+        <div class="form-control">
+          <input type="password" id="password" name="password" placeholder="Retype the Password" #repassword>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="designation">Designation</label>
+        <div class="form-control">
+          <input type="text" id="designation" name="designation" placeholder="Enter Designation" #designation>
+        </div>
+    </div>
+    <div class="form-group">
+      <button class="btn" type="submit" (click)="saveUser(userName.value, email.value, password.value, repassword.value, designation.value)">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</div>

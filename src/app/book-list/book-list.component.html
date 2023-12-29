@@ -1,0 +1,30 @@
+<p>book-list works!</p>
+<h2> Book List</h2>
+<table class = "table table-striped border border-3 border-dark">
+    <thead>
+        <tr>
+            <th> Book Id </th>
+            <th> Book Name </th>
+            <th> Author </th>
+            <th> Book Borrowed </th>
+            <th> Book Borrowedby </th>
+            <th> Book Available </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let book of books | paginate: { itemsPerPage: count, currentPage: p }" >
+            <td> {{ book.bookId }} </td>
+            <td> {{ book.bookName }} </td>
+            <td> {{ book.author }} </td>
+            <td> {{ book.borrowed }} </td>
+            <td> {{ book.borrowedby }} </td>
+            <td> {{ book.isAvailable }} </td>
+            <td>
+                <button (click) = "updateBook(book.bookId)" class = "btn btn-secondary" *ngIf="userService.isUserLoggedIn()"> Update</button>
+                <button (click) = "viewBook(book.bookId)" class = "btn btn-info" style="margin-left: 10px" *ngIf="userService.isUserLoggedIn()"> View</button>
+                <button (click) = "deleteBook(book.bookId)" class = "btn btn-info" style="margin-left: 10px" *ngIf="userService.isUserLoggedIn()"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

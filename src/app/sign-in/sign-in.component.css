@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Change the background color as needed */
+  }
+  
+  .card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+  }
+  .card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+  background-color: #fff; /* Change the background color for the front side */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #f8f8f8; /* Change the background color for the back side */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
